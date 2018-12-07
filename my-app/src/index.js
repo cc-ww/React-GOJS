@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+//css
+import 'bootstrap/dist/css/bootstrap.css';
+import 'antd/dist/antd.css';
+
 import './index.css';
 import './media.css';
+
+//js
 import App from './App';
 import Test1 from './test1/Test1';
 import Test2 from './test2/Test2';
 import Test3 from './test3/Test3';
-
 
 import {
     BrowserRouter as Router,

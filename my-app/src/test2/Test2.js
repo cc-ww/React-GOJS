@@ -134,7 +134,7 @@ class Test2 extends React.Component {
             <div style = {{ 'fontSize': '0.2rem' }}>
                 <h1>{this.state.title}</h1>
                 <div className = "mybox">
-                    <h4>my first goJS is GOOD!</h4>
+                    <span>my first goJS is GOOD!</span>
                     <div id="go_one">
                         
                     </div>
