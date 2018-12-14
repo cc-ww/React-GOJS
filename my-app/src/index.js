@@ -13,6 +13,7 @@ import App from './App';
 import Test1 from './test1/Test1';
 import Test2 from './test2/Test2';
 import Test3 from './test3/Test3';
+import TestFour from './testFour/test4'
 
 import {
     BrowserRouter as Router,
@@ -40,12 +41,14 @@ class Sendhtml extends React.Component{
                         <li><NavLink exact  to='test1' activeClassName="selected" isActive={this.goActive.bind(this,'/test1')}>NO.1</NavLink></li>
                         <li><NavLink exact to='test2' activeClassName="selected" isActive={this.goActive.bind(this,'/test2')}>NO.2</NavLink></li>
                         <li><NavLink exact to='test3' activeClassName="selected"  title = "position:sticky"  isActive={this.goActive.bind(this,'/test3')}>NO.3</NavLink></li>
+                        <li><NavLink exact to='testFour' activeClassName="selected"  isActive={this.goActive.bind(this,'/testFour')}>css3</NavLink></li>
                     </ul>
                     <hr/>
                     <Route exact path="/" component={App}/>
                     <Route exact path="/test1" component={Test1}/>
                     <Route exact path="/test2" component={Test2}/>
                     <Route exact path="/test3" component={Test3}/>
+                    <Route exact path="/testFour" component={TestFour}/>
                 </div>
             </Router>
         )

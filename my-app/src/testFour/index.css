@@ -1,0 +1,31 @@
+.myBox{
+	height: 700px;
+	background: url('../image/well.jpg') 100% 100% ;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	transform-Origin: 50% 50%; /*设置旋转元素的基点位置*/
+	/*transform-style: preserve-3d;*/
+	 /*preserve-3d：使被转换的子元素保留其 3D 转换,flat:子元素不保留其 3D 转换*/
+	/*transform: rotateY(60deg);*/
+	perspective:800px; /*物体距离屏幕的距离*/
+}
+.ani_item{
+	/*transform-style: preserve-3d;*/
+	height: 200px;
+	width: 200px;
+	background: pink;
+	position: absolute;
+	transform: rotateX(65deg);
+	animation:mymove 5s infinite;
+	border-radius: 50%;
+}
+
+@keyframes mymove{
+	from {
+		transform:rotateX(65deg) rotateZ(0)
+	} to {
+		transform:rotateX(65deg) rotateZ(360deg)
+	}
+}

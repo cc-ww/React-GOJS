@@ -10,13 +10,45 @@ class Test3 extends React.Component {
 			title:"I just want to test the css style -- position:sticky",
 			loading: true
 		}
+		this.kobj = {
+			handle: (x) => {
+				return x+2;
+			}
+		}
 		this.onmuclick = this.onmuclick.bind(this);
+		this.testEs = this.testEs.bind(this);
+		this.testEs();
 	}
 
 	componentDidMount() {
-		console.log(">>>>>>>>>>>")
 		this.onmuclick()
 	}
+
+	testEs(){
+		let set1 = new Set([1,2,3,4,5]);
+		var kobj = {
+			handle: (x) =>{
+				return x+2;
+			}
+		}
+		const forCopyObj = {
+			a:1,
+			b:2,
+			c:3
+		}
+		// const myCopy = {...forCopyObj};
+		const myCopy = Object.assign({},forCopyObj)
+		console.log(myCopy);
+		forCopyObj.a = ">>>>";
+		console.log(myCopy);
+
+
+		set1.forEach(function(v,k){
+			v = this.handle(v)
+			console.log(v,k)
+		},kobj)
+	}
+
 
 	onmuclick(e){
 		this.setState({
