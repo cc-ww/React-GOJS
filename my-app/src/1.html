@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Document</title>
+
+</head>
+
+<style>
+
+
+
+.yuanzhu{ position: relative; height: 200px; width: 50px; margin-top: 30px; background:red;margin:30px auto; z-index: 999  }
+
+.yuanzhu:before{position: absolute; top:-10px; content: ""; display: block; width: 50px; height: 20px; border-radius:50%; background: #000;  z-index: 99}
+
+.yuanzhu:after{position: absolute; bottom:-10px; content: ""; display: block; width: 50px; height: 20px; border-radius:50%; background: red; z-index: 9 }
+
+</style>
+
+<body>
+
+
+
+<div class="yuanzhu"></div>
+
+</body>
+
+</html>

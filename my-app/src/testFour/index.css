@@ -1,10 +1,10 @@
-.myBox{
+.myBox2{
 	height: 700px;
 	background: url('../image/well.jpg') 100% 100% ;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	position: relative;
+	/*position: relative;*/
 	transform-Origin: 50% 50%; /*设置旋转元素的基点位置*/
 	/*transform-style: preserve-3d;*/
 	 /*preserve-3d：使被转换的子元素保留其 3D 转换,flat:子元素不保留其 3D 转换*/
@@ -12,14 +12,72 @@
 	perspective:800px; /*物体距离屏幕的距离*/
 }
 .ani_item{
-	/*transform-style: preserve-3d;*/
+	transform-style: preserve-3d;
 	height: 200px;
 	width: 200px;
 	background: pink;
-	position: absolute;
+	position: relative;
 	transform: rotateX(65deg);
-	animation:mymove 5s infinite;
-	border-radius: 50%;
+	animation:mymove 5s linear infinite;
+	border-radius: 100%;
+	shape-outside: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+/*.ani_center{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: 1rem;
+	width: 1rem;
+	margin-left: -0.5rem;
+	margin-top: -0.5rem;
+	background: #03bbcc;
+	border-radius: 100%;
+}*/
+
+.ani_center {
+	width: 0;
+	height: 0;
+	border-left: 1rem solid transparent;
+	border-right: 1rem solid transparent;
+	border-bottom: 2rem solid red;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -1rem;
+	margin-top: -1.3rem;
+}
+.ani_center::after {
+	width: 0;
+	height: 0;
+	border-left: 1rem solid transparent;
+	border-right: 1rem solid transparent;
+	border-top: 2rem solid red;
+	position: absolute;
+	content: "";
+	top: 0.6rem;
+	left: -1rem;
+}
+
+.ani_center_top{
+	transform: translateZ(2rem);
+	animation:mytopmove 5s linear infinite;
+}
+.ani_center_top::after{
+	content: "长江7号";
+	color: yellow;
+}
+
+.ani_center_bottom{
+	border-bottom: 2rem solid yellow;
+	transform: translateZ(-2rem);
+	animation:mybottommove 5s linear infinite;
+}
+
+.ani_center_bottom::after{
+	border-top: 2rem solid yellow;
 }
 
 @keyframes mymove{
@@ -29,3 +87,28 @@
 		transform:rotateX(65deg) rotateZ(360deg)
 	}
 }
+
+@keyframes mytopmove{
+	0% {
+		transform: translateZ(2rem) rotateZ(0deg);
+	}
+	50% {
+		transform: translateZ(-2rem) rotateZ(-360deg);
+	}
+	100% {
+		transform: translateZ(2rem) rotateZ(0deg);
+	}
+}
+
+@keyframes mybottommove{
+	0% {
+		transform: translateZ(-2rem);
+	}
+	50% {
+		transform: translateZ(2rem);
+	}
+	100% {
+		transform: translateZ(-2rem);
+	}
+}
+
