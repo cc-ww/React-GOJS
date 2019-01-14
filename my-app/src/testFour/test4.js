@@ -20,7 +20,9 @@ class TestFour extends React.Component {
 	}
 
 	myAnimateClick(){
-		this.state.myflag =  !this.state.myflag;
+		this.setState({
+			myflag: !this.state.myflag
+		});
 		if(!this.state.myflag){
 			$('.ani_item').find("div").removeClass("ani_center")
 		}else{

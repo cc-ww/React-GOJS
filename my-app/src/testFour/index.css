@@ -18,7 +18,7 @@
 	background: pink;
 	position: relative;
 	transform: rotateX(65deg);
-	animation:mymove 5s linear infinite;
+	animation: mymove 5s linear infinite;
 	border-radius: 100%;
 	shape-outside: border-box;
 	display: flex;
@@ -73,7 +73,7 @@
 .ani_center_bottom{
 	border-bottom: 2rem solid yellow;
 	transform: translateZ(-2rem);
-	animation:mybottommove 5s linear infinite;
+	animation: mybottommove 5s linear infinite;
 }
 
 .ani_center_bottom::after{
@@ -90,13 +90,19 @@
 
 @keyframes mytopmove{
 	0% {
-		transform: translateZ(2rem) rotateZ(0deg);
+		transform: translateZ(2rem) rotateZ(0deg) translateX(-3rem);
 	}
-	50% {
-		transform: translateZ(-2rem) rotateZ(-360deg);
+	20% {
+		transform: translateZ(0rem) rotateZ(-360deg) translateX(0rem);
+	}
+	40%{
+		transform: translateZ(-2rem) rotateZ(-360deg) translateX(3rem);
+	}
+	60%{
+		transform: translateZ(0rem) rotateZ(-360deg) translateX(0rem);
 	}
 	100% {
-		transform: translateZ(2rem) rotateZ(0deg);
+		transform: translateZ(2rem) rotateZ(0deg) translateX(-3rem);
 	}
 }
 

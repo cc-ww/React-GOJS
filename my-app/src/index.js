@@ -13,7 +13,11 @@ import App from './App';
 import Test1 from './test1/Test1';
 import Test2 from './test2/Test2';
 import Test3 from './test3/Test3';
-import TestFour from './testFour/test4'
+import TestFour from './testFour/test4';
+import Test5 from './test5/Test';
+import Test6 from './test6/Test';
+import Test7 from './test7/Test';
+
 
 import {
     BrowserRouter as Router,
@@ -42,13 +46,19 @@ class Sendhtml extends React.Component{
                         <li><NavLink exact to='test2' activeClassName="selected" isActive={this.goActive.bind(this,'/test2')}>NO.2</NavLink></li>
                         <li><NavLink exact to='test3' activeClassName="selected"  title = "position:sticky"  isActive={this.goActive.bind(this,'/test3')}>NO.3</NavLink></li>
                         <li><NavLink exact to='testFour' activeClassName="selected"  isActive={this.goActive.bind(this,'/testFour')}>css3</NavLink></li>
+                        <li><NavLink exact to='test5' activeClassName="selected"  isActive={this.goActive.bind(this,'/test5')}>echarts</NavLink></li>
+                        <li><NavLink exact to='test6' activeClassName="selected"  isActive={this.goActive.bind(this,'/test6')}>百度地图</NavLink></li>
+                         <li><NavLink exact to='test7' activeClassName="selected"  isActive={this.goActive.bind(this,'/test7')}>echarts地图</NavLink></li>
                     </ul>
                     <hr/>
                     <Route exact path="/" component={App}/>
-                    <Route exact path="/test1" component={Test1}/>
-                    <Route exact path="/test2" component={Test2}/>
-                    <Route exact path="/test3" component={Test3}/>
-                    <Route exact path="/testFour" component={TestFour}/>
+                    <Route exact path="/test1" component = {Test1}/>
+                    <Route exact path="/test2" component = {Test2}/>
+                    <Route exact path="/test3" component = {Test3}/>
+                    <Route exact path="/testFour" component = {TestFour}/>
+                    <Route exact path="/test5" component = {Test5}/>
+                    <Route exact path="/test6" component = {Test6}/>
+                    <Route exact path="/test7" component = {Test7}/>
                 </div>
             </Router>
         )
