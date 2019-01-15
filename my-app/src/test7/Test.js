@@ -139,16 +139,7 @@ class Test7 extends React.Component {
 			'韶关': [113.7964,24.7028]
 		};
 		const BJData = [
-			[{name:'北京'}, {name:'上海',value:95}],
-			[{name:'北京'}, {name:'广州',value:90}],
-			[{name:'北京'}, {name:'大连',value:80}],
-			[{name:'北京'}, {name:'南宁',value:70}],
-			[{name:'北京'}, {name:'南昌',value:60}],
-			[{name:'北京'}, {name:'拉萨',value:50}],
-			[{name:'北京'}, {name:'长春',value:40}],
-			[{name:'北京'}, {name:'包头',value:30}],
-			[{name:'北京'}, {name:'重庆',value:20}],
-			[{name:'北京'}, {name:'常州',value:10}]
+			[{name:'北京', value:80}, {name:'上海',value:95}]
 		];
 
 		let convertData = function (data) {
@@ -171,123 +162,195 @@ class Test7 extends React.Component {
 		let planePath = 'path://M1705.06,1318.313v-89.254l-319.9-221.799l0.073-208.063c0.521-84.662-26.629-121.796-63.961-121.491c-37.332-0.305-64.482,36.829-63.961,121.491l0.073,208.063l-319.9,221.799v89.254l330.343-157.288l12.238,241.308l-134.449,92.931l0.531,42.034l175.125-42.917l175.125,42.917l0.531-42.034l-134.449-92.931l12.238-241.308L1705.06,1318.313z';
 		let series = [];
 		[['北京', BJData]].forEach(function (item, i) {
-		    series.push({
-		        name: item[0],
-		        type: 'lines',
-		        zlevel: 1,
-		        effect: {
-		            show: true,
-		            period: 6,
-		            trailLength: 0.7,
-		            color: '#fff',
-		            symbolSize: 3
-		        },
-		        lineStyle: {
-		            normal: {
-		                color: "#a6c84c",
-		                width: 0,
-		                curveness: 0.2
-		            }
-		        },
-		        data: convertData(item[1])
-		    },
-		    {
-		        name: item[0],
-		        type: 'lines',
-		        zlevel: 2,
-		        effect: {
-		            show: true,
-		            period: 6,
-		            delay:1000*20,
-		            trailLength: 0,
-		            symbol: planePath,
-		            symbolSize: 15
-		        },
-		        lineStyle: {
-		            normal: {
-		                color: "#a6c84c",
-		                width: 1,
-		                opacity: 0.4,
-		                curveness: 0.2
-		            }
-		        },
-		        data: convertData(item[1])
-		    },
-		    {
-		        name: item[0],
-		        type: 'effectScatter',
-		        coordinateSystem: 'geo',
-		        zlevel: 2,
-		        rippleEffect: {
-		            brushType: 'stroke'
-		        },
-		        label: {
-		            normal: {
-		                show: true,
-		                position: 'right',
-		                formatter: '{b}'
-		            }
-		        },
-		        symbolSize: function (val) {
-		            return val[2] / 8;
-		        },
-		        itemStyle: {
-		            normal: {
-		                color: "#a6c84c"
-		            }
-		        },
-		        data: item[1].map(function (dataItem) {
-		            return {
-		                name: dataItem[1].name,
-		                value: geoCoordMap[dataItem[1].name].concat([dataItem[1].value])
-		            };
-		        })
-		    });
+			series.push(
+			// {
+			//     name: item[0],
+			//     type: 'lines',
+			//     zlevel: 1,
+			//     effect: {
+			//         show: true,
+			//         period: 5,
+			//         trailLength: 0.7,
+			//         color: '#fff',
+			//         symbolSize: 3
+			//     },
+			//     lineStyle: {
+			//         normal: {
+			//             color: "#a6c84c",
+			//             width: 0,
+			//             curveness: 0.2
+			//         }
+			//     },
+			//     data: convertData(item[1])
+			// },
+			{
+				name: item[0],
+				type: 'lines',
+				zlevel: 2,
+				effect: {
+					show: true,
+					period: 7,
+					// delay:1000*20,
+					trailLength: 0,
+					symbol: planePath,
+					symbolSize: 15
+				},
+				lineStyle: {
+					normal: {
+						color: "#a6c84c",
+						width: 1,
+						opacity: 0.4,
+						curveness: 0.2
+					}
+				},
+				data: convertData(item[1])
+			}
+			// ,
+			// {
+			//     name: item[0],
+			//     type: 'effectScatter',
+			//     coordinateSystem: 'geo',
+			//     zlevel: 2,
+			//     rippleEffect: {
+			//         brushType: 'stroke'
+			//     },
+			//     label: {
+			//         normal: {
+			//             show: true,
+			//             position: 'right',
+			//             formatter: '{b}'
+			//         }
+			//     },
+			//     symbolSize: function (val) {
+			//         return val[2] / 8;
+			//     },
+			//     itemStyle: {
+			//         normal: {
+			//             color: "#a6c84c"
+			//         }
+			//     },
+			//     data: item[1].map(function (dataItem) {
+			//         return {
+			//             name: dataItem[1].name,
+			//             value: geoCoordMap[dataItem[1].name].concat([dataItem[1].value])
+			//         };
+			//     })
+			// }
+			);
 		});
 
 		let option = {
-		    backgroundColor: '#404a59',
-		    title : {
-		        text: '模拟迁徙',
-		        subtext: '数据纯属虚构',
-		        left: 'center',
-		        textStyle : {
-		            color: '#fff'
-		        }
-		    },
-		    tooltip : {
-		        trigger: 'item'
-		    },
-		    legend: {
-		        orient: 'vertical',
-		        top: 'bottom',
-		        left: 'right',
-		        data:['北京'],
-		        textStyle: {
-		            color: '#fff'
-		        },
-		        selectedMode: 'single'
-		    },
-		    geo: {
-		        map: 'china',
-		        label: {
-		            emphasis: {
-		                show: false
-		            }
-		        },
-		        roam: true,
-		        itemStyle: {
-		            normal: {
-		                areaColor: '#323c48',
-		                borderColor: '#404a59'
-		            },
-		            emphasis: {
-		                areaColor: '#2a333d'
-		            }
-		        }
-		    },
-		    series: series
+			backgroundColor: '#404a59',
+			title : {
+				text: '模拟迁徙',
+				subtext: '数据纯属虚构',
+				left: 'center',
+				textStyle : {
+					color: '#fff'
+				}
+			},
+			tooltip : {
+				trigger: 'item'
+			},
+			legend: {
+				orient: 'vertical',
+				top: 'bottom',
+				left: 'right',
+				data:['北京'],
+				textStyle: {
+					color: '#fff'
+				},
+				selectedMode: 'single'
+			},
+			geo: {
+				map: 'china',
+				label: {
+					emphasis: {
+						show: false
+					}
+				},
+				roam: true,
+				itemStyle: {
+					normal: {
+						areaColor: '#323c48',
+						borderColor: '#404a59'
+					},
+					emphasis: {
+						areaColor: '#2a333d'
+					}
+				}
+			},
+			series: series
 		};
+
+
+		var zr = myChart.getZr();
+		setInterval(doani,1000)
+		function doani(){
+			var x1=1*200;
+			var y1=1*200;
+			var x2=Math.random()*600;
+			var y2=Math.random()*600;
+			var circle=new echarts.graphic.Circle({
+				position: [x1,y1],
+				scale: [10, 10],
+				shape: {
+					cx: 0,
+					cy: 0,
+					r: 2
+				},
+				style:{
+					fill:'white'
+				},
+				zlevel:3
+			});
+			var circle2=new echarts.graphic.Circle({
+				position:  [x2,y2],
+				scale: [1, 1],
+				shape: {
+					cx: 0,
+					cy: 0,
+					r: 0
+				},
+				style:{
+					fill:'none',
+					stroke:'red',
+					opacity:1,
+				},
+				zlevel:3
+			  });
+		   
+			/*动态模糊*/
+			zr.configLayer(3, {
+					motionBlur: true,
+					lastFrameAlpha: 0.8,
+			});
+	   
+			/*动画部分*/
+			circle.animate('', false)
+				.when(1000, {
+					position: [x2,y2]
+				})
+				.start()
+				.done(function(){
+					zr.remove(circle);
+					circle2.animateTo({
+						shape: {
+							cx: 0,
+							cy: 0,
+							r: 50
+						},
+						style:{
+							fill:'none',
+							stroke:'red',
+							opacity:0,
+						},
+					},1000,'cubicOut')
+			   })
+
+			zr.add(circle2);
+			zr.add(circle);
+		}
 
 		myChart.setOption(option);
 		window.onresize = () => {
