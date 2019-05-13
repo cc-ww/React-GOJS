@@ -1,9 +1,9 @@
 import React from 'react';
 
 import './test.css';
-import jquery from 'jquery';
+// import jquery from 'jquery';
 
-const $ = jquery;
+// const $ = jquery;
 // import { DatePicker, Button, Icon, Spin} from 'antd';
 // import stickybits from 'stickybits'
 
@@ -135,6 +135,33 @@ class Test8 extends React.Component {
 					<input className="kl"  value = {this.state.value2} onChange = {this.changeLo}></input>
 				</div>
 				<div onClick = {this.ccClick}>点击全屏</div>
+				<div style={{position:"relative"}}>
+					<div style = {{ 'height': '1000px',width:'900px',background:'#03bbcc',overflow:"scroll",}}>
+						<div  style = {{ 'height': '2000px',width:'800px',background:'#ccc'}}>
+							<div style={{'width':"800px",background:"#ccc",position:"sticky",top:"2%"}}>
+								<div style = {{ 'height': '100px',width:'100px',background:'yellow', }}>I am fixed document!</div>
+							</div>
+							<div style = {{ "marginTop":"100px"}}>11111</div>
+							<div style = {{ 'height': '300px',width:'800px',background:'red' }} >11111</div>
+							<div>11111</div>
+							<div>11111</div>
+							<div>11111</div>
+							<div>11111</div>
+							<div>11111</div>
+							<div>11111</div>
+							<div>11111</div>
+							<div>11111</div>
+							<div>11111</div>
+							<div>11111</div>
+							<div>11111</div>
+							<div>11111</div>
+							<div>11111</div>
+							<div>11111</div>
+
+						</div>
+					</div>
+				</div>
+				
 			</div>
 		);
 	}

@@ -1,9 +1,9 @@
 import React from 'react';
 
 import './test.css';
-import jquery from 'jquery';
+// import jquery from 'jquery';
 
-const $ = jquery;
+// const $ = jquery;
 // import { DatePicker, Button, Icon, Spin} from 'antd';
 // import stickybits from 'stickybits'
 

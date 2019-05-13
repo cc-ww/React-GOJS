@@ -19,7 +19,9 @@ class Toggle extends React.Component {
 			placeHolder: 'please write a word!',
 			name_2: '',
 			isGoing: true,
-			temperature: ''
+			temperature: '',
+			test:'',
+			test2:''
 		};
 
 		// This binding is necessary to make `this` work in the callback
@@ -38,6 +40,22 @@ class Toggle extends React.Component {
 			isToggleOn: !prevState.isToggleOn,
 		}
 		));
+	}
+
+	componentWillMount(){
+		this.test = ()=>{
+			var count = 0;
+			return {
+				m1:count
+			}
+		};
+		this.test2 = {
+			_count:0
+		}
+		this.test2._count = 3;
+		console.log(this.test2);
+		this.test.m1 = 2;
+		console.log(this.test.m1)
 	}
 
 	showClick() {

@@ -17,7 +17,7 @@
 	width: 200px;
 	background: pink;
 	position: relative;
-	transform: rotateX(65deg);
+	transform: rotateX(0deg);
 	animation: mymove 5s linear infinite;
 	border-radius: 100%;
 	shape-outside: border-box;

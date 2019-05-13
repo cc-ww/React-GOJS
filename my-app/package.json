@@ -3,17 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "antd": "^3.11.0",
+    "antd": "^3.18.1",
     "bootstrap": "^3.4.0",
     "distpicker": "^2.0.5",
     "echarts": "^4.2.0-rc.2",
     "gojs": "^1.8.34",
-    "jquery": "^3.3.1",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
+    "jquery": "^3.4.1",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.4",
-    "redux": "^4.0.1",
+    "react-scripts": "^3.0.1",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0",
     "stickybits": "^3.5.8"
   },
   "scripts": {
@@ -24,5 +26,17 @@
   },
   "devDependencies": {
     "babel-plugin-import": "^1.11.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

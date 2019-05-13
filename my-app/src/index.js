@@ -18,6 +18,7 @@ import Test5 from './test5/Test';
 import Test6 from './test6/Test';
 import Test7 from './test7/Test';
 import Test8 from './test8/Test';
+import Test9 from './test9/Test';
 
 
 
@@ -52,6 +53,7 @@ class Sendhtml extends React.Component{
                         <li><NavLink exact to='test6' activeClassName="selected"  isActive={this.goActive.bind(this,'/test6')}>百度地图</NavLink></li>
                         <li><NavLink exact to='test7' activeClassName="selected"  isActive={this.goActive.bind(this,'/test7')}>echarts地图</NavLink></li>
                         <li><NavLink exact to='test8' activeClassName="selected"  isActive={this.goActive.bind(this,'/test8')}>tricks</NavLink></li>
+                        <li><NavLink exact to='test9' activeClassName="selected"  isActive={this.goActive.bind(this,'/test9')}>redux coming!</NavLink></li>
                     </ul>
                     <hr/>
                     <Route exact path="/" component={App}/>
@@ -63,6 +65,8 @@ class Sendhtml extends React.Component{
                     <Route exact path="/test6" component = {Test6}/>
                     <Route exact path="/test7" component = {Test7}/>
                     <Route exact path="/test8" component = {Test8}/>
+                    <Route exact path="/test9" component = {Test9}/>
+
                 </div>
             </Router>
         )
