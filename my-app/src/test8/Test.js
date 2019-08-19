@@ -130,6 +130,7 @@ class Test8 extends React.Component {
 		return (
 			<div className="contentBox">
 				<h3>{ this.state.title }</h3>
+				<a href="https://www.baidu.com" referrerPolicy="no-referrer" >百度链接跳转  -- 测试2 referer</a>
 				<div className = "Box">
 					<textarea className="" onChange={ this.change }    value={ this.state.value } ></textarea><button onClick={this.click}>复制</button>
 					<input className="kl"  value = {this.state.value2} onChange = {this.changeLo}></input>
