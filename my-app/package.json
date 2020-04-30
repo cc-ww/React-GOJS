@@ -8,7 +8,7 @@
     "distpicker": "^2.0.5",
     "echarts": "^4.2.0-rc.2",
     "gojs": "^1.8.34",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",
